@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  
+body {
+    position: relative;
+    background-color: #F8F5F2;
+    color: #232323;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='40' height='40' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(30, 30%, 96%, 1)'/><path d='M20-5V5m0 30v10m20-30v10M0 15v10'  stroke-linecap='square' stroke-width='0.5' stroke='hsla(180, 90%, 26%, 0.11)' fill='none'/><path d='M-5 40H5M-5 0H5m30 0h10M35 40h10M15 20h10'  stroke-linecap='square' stroke-width='0.5' stroke='hsla(7, 89%, 62%, 0.15)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+    min-height: 10ovh;
+    width: 100%;
+}
+
+.nav-1 {
+    background-color: #F45D48;
+    height: 30px;
+    width: 100%;
+    margin: 0;
+    position: fixed;
+    top: 0;
+}
+
+.nav-2 {
+    background-color: #F45D48;
+    height: 30px;
+    width: 100%;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+}
+
+
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-size: 96px;
+    text-align: center;
+    width: 688px;
+    margin: 0;
+    padding-bottom: 0px;
+    line-height: 90px;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    width: 600px;
+    font-weight: 500;
+    color: #078080;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 13px;
+    text-align: center;
+    margin: 5px;
+}
+
+p a {
+    text-decoration: none;
+    color: #f8f5f2d8;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#first {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 30px;
+    align-content: center;
+}
+
+#input {
+    width: 500px;
+    height: 50px;
+    padding-left: 50px;
+    border: 3px solid #232323;
+    border-radius: 0;
+    margin: 0;
+    font-size: 18px;
+    outline: none;
+}
+
+.shorten {
+    width: 150px;
+    height: 50px;
+    padding: 0;
+    background-color: #078080;
+    border: none;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 12px 16px;
+}
+
+.shorten:hover {
+    background-color: #026060;
+}
+
+#second {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 50px;
+    align-content: center;
+}
+
+#output {
+    width: 500px;
+    height: 50px;
+    padding-left: 50px;
+    border: 3px solid #232323;
+    border-radius: 0;
+    margin: 0;
+    font-size: 18px;
+    outline: none;
+}
+
+#copy {
+    width: 150px;
+    height: 50px;
+    padding: 0;
+    background-color: #078080;
+    border: none;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 12px 16px;
+    cursor: pointer;
+}
+
+#copy:hover {
+    background-color: #026060;
+}
+
+button {
+    color: #F8F5F2; 
+}
+
+
+
+.fa-copy {
+    padding-right: 8px;
+}
+
+.fa-hand-scissors {
+    padding-right: 8px;
+}
+
+
+.fa-link {
+    padding: 15px;
+    margin-bottom: 0px;
+    position: absolute;
+    color: #F45D48;
+}
+
+.fa-up-right-from-square{
+    padding: 15px;
+    margin-bottom: 0px;
+    position: absolute;
+    color: #F45D48;
+}
+
+/* Alert banner */
+
+.notify{  
+    position:absolute;
+    top:0px;
+    width:100%;
+    height:0;  
+    box-sizing:border-box;
+    color:white;  
+    text-align:center;
+    background:#026060;
+    /* opacity: 0.6; */
+    overflow:hidden;
+    box-sizing:border-box;
+    transition:height .2s;
+  }
+  
+  #notifyType:before{
+    display:block;
+    margin-top: 18px; 
+    
+  }
+  
+  .active{  
+    height: 60px;
+  }
+  
+  .success:before{
+    font-size: 20px;
+    Content:"Yaaaaay!! Your link has been copied";
+  }
+
+  .failed:before{
+    font-size: 20px;
+    Content:"Your link is getting shortened..."
+  }
+
+  /* Alert banner */
+  
+
+
+ @media only screen and (max-width: 600px) {
+
+    .nav-1 {
+        background-color: #F45D48;
+        height: 20px;
+        width: 100%;
+        margin: 0;
+        position: absolute;
+        top: 0%;
+    }
+    
+    .nav-2 {
+        background-color: #F45D48;
+        height: 20px;
+        width: 100%;
+        position: fixed;
+    
+    }
+     
+   
+    .header {
+        margin-bottom: 30px;
+    }
+
+    h1 {
+        font-size: 65px;
+        width: 500px;
+        line-height: 67px;
+    }
+
+    h2 {
+        font-size: 25px;
+        width: 560px;
+        line-height: 27px;
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+    p {
+        font-size: 11px;
+        margin-top: 5px;
+        display: none;
+    }
+
+    #input {
+        width: 400px;
+        height: 50px;
+        padding-left: 50px;
+        border: 3px solid #232323;
+        border-radius: 0;
+        margin: 0;
+        font-size: 15px;
+        outline: none;
+    }
+
+    #output {
+        width: 400px;
+        height: 50px;
+        padding-left: 50px;
+        border: 3px solid #232323;
+        border-radius: 0;
+        margin: 0;
+        font-size: 15px;
+        outline: none;
+    }
+
+    
+
+ 
+    }
+
+    @media only screen and (max-width: 480px) {
+
+        .nav-1 {
+            background-color: #F45D48;
+            height: 20px;
+            width: 100%;
+            margin: 0;
+            position: absolute;
+            top: 0%;
+        }
+        
+        .nav-2 {
+            background-color: #F45D48;
+            height: 20px;
+            width: 100%;
+            position: fixed;
+        
+        }
+         
+         
+        .header {
+            margin-bottom: 30px;
+        }
+    
+        h1 {
+            font-size: 50px;
+            width: 400px;
+            line-height: 49px;
+        }
+    
+        h2 {
+            font-size: 20px;
+            width: 400px;
+            line-height: 27px;
+            margin-bottom: 0;
+            margin-top: 10px;
+        }
+
+        p {
+            font-size: 9px;
+            display: none;
+        }
+    
+    
+        #input {
+            width: 280px;
+            height: 50px;
+            padding-left: 50px;
+            border: 3px solid #232323;
+            border-radius: 0;
+            margin: 0;
+            font-size: 15px;
+            outline: none;
+        }
+    
+        #output {
+            width: 280px;
+            height: 50px;
+            padding-left: 50px;
+            border: 3px solid #232323;
+            border-radius: 0;
+            margin: 0;
+            font-size: 15px;
+            outline: none;
+        }
+    
+
+        .shorten {
+            width: 100px;
+            height: 50px;
+            padding: 0;
+            background-color: #078080;
+            border: none;
+            margin: 0;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 12px 5px;
+            cursor: pointer;
+        }
+     
+        #copy {
+            width: 100px;
+            height: 50px;
+            padding: 0;
+            background-color: #078080;
+            border: none;
+            margin: 0;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 12px 5px;
+            cursor: pointer;
+        }
+        } 
+
+        @media only screen and (max-width: 375px) {
+
+            .nav-1 {
+                background-color: #F45D48;
+                height: 20px;
+                width: 100%;
+                margin: 0;
+                position: absolute;
+                top: 0%;
+            }
+            
+            .nav-2 {
+                background-color: #F45D48;
+                height: 20px;
+                width: 100%;
+                position: fixed;
+            
+            }
+             
+            .header {
+                margin-bottom: 30px;
+            }
+        
+            h1 {
+                font-size: 47px;
+                width: 400px;
+                line-height: 49px;
+            }
+        
+            h2 {
+                font-size: 17px;
+                width: 380px;
+                line-height: 27px;
+                margin-bottom: 0;
+                margin-top: 10px;
+            }
+    
+            p {
+                font-size: 9px;
+                display: none;
+            }
+        
+        
+            #input {
+                width: 250px;
+                height: 50px;
+                padding-left: 50px;
+                border: 3px solid #232323;
+                border-radius: 0;
+                margin: 0;
+                font-size: 15px;
+                outline: none;
+            }
+        
+            #output {
+                width: 250px;
+                height: 50px;
+                padding-left: 50px;
+                border: 3px solid #232323;
+                border-radius: 0;
+                margin: 0;
+                font-size: 15px;
+                outline: none;
+            }
+        
+    
+            .shorten {
+                width: 90px;
+                height: 50px;
+                padding: 0;
+                background-color: #078080;
+                border: none;
+                margin: 0;
+                font-size: 12px;
+                font-weight: 700;
+                padding: 12px 5px;
+                cursor: pointer;
+            }
+         
+            #copy {
+                width: 90px;
+                height: 50px;
+                padding: 0;
+                background-color: #078080;
+                border: none;
+                margin: 0;
+                font-size: 12px;
+                font-weight: 700;
+                padding: 12px 5px;
+                cursor: pointer;
+            }
+            }
