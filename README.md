@@ -1,4 +1,4 @@
-# URL Shortener
+# LinkLeap
 Developed a URL shortener, increasing the click-through rate and customer engagements by over 26%, hence facilitating a faster and more secure customer access to businesses.
 
 ## Screenshots
